@@ -1,12 +1,14 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import { setupLayouts } from 'virtual:generated-layouts'
-import generatedRoutes from 'virtual:generated-pages'
+import { createRouter, createWebHistory } from 'vue-router';
+// eslint-disable-next-line import/no-unresolved
+import { setupLayouts } from 'virtual:generated-layouts';
+// eslint-disable-next-line import/no-unresolved
+import generatedRoutes from 'virtual:generated-pages';
 
-const routes = setupLayouts(generatedRoutes)
+const routes = setupLayouts(generatedRoutes);
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
-})
+});
 
-export default router
+export default router;
