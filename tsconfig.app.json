@@ -5,8 +5,11 @@
   "compilerOptions": {
     "composite": true,
     "baseUrl": ".",
+    "types": ["unplugin-icons/types/vue"],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@composables/*": ["./src/composables/*"]
     }
   }
 }

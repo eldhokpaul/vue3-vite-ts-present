@@ -19,10 +19,24 @@ module.exports = {
       node: {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
+      alias: {
+        map: [
+          ['@', './src'],
+          ['@utils', './src/utils'],
+        ],
+      },
     },
   },
   rules: {
     'vue/multi-word-component-names': 'off',
     'import/extensions': 'off',
+    'import/no-unresolved': 'off',
+    'import/prefer-default-export': 'off',
+    'no-unused-vars': 'off',
+    'vue/attribute-hyphenation': 'error',
+    'vue/prop-name-casing': 'off',
+    'vue/component-name-in-template-casing': 'error',
+    'vue/custom-event-name-casing': ['error', 'kebab-case'],
+    'vuejs-accessibility/click-events-have-key-events': 'off',
   },
 };

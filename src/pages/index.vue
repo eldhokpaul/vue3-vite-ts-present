@@ -1,9 +1,13 @@
 <template>
-  <div>
-    Home
-    <h1 class="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-    <HelloWorld msg="test" />
+  <div class="font-light">
+    Welcome to the
+    <span class="font-bold text-lg">DataGuard</span>
+    Dashboard
   </div>
 </template>
+
+<script lang="ts" setup>
+import { useGetDashboardData } from '@composables/api/useDashboardData';
+
+useGetDashboardData();
+</script>

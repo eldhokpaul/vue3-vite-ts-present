@@ -9,15 +9,30 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    DefaultHeader: typeof import('./src/components/default-layout/default-header.vue')['default']
+    DefaultHome: typeof import('./src/components/default-layout/default-home.vue')['default']
+    DefaultHomeBanner: typeof import('./src/components/default-layout/default-home-banner.vue')['default']
+    DefaultSidebar: typeof import('./src/components/default-layout/default-sidebar.vue')['default']
+    Header: typeof import('./src/components/default-layout/header.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    ICarbonAccessibility: typeof import('~icons/carbon/accessibility')['default']
     IconCommunity: typeof import('./src/components/icons/IconCommunity.vue')['default']
     IconDocumentation: typeof import('./src/components/icons/IconDocumentation.vue')['default']
     IconEcosystem: typeof import('./src/components/icons/IconEcosystem.vue')['default']
     IconSupport: typeof import('./src/components/icons/IconSupport.vue')['default']
     IconTooling: typeof import('./src/components/icons/IconTooling.vue')['default']
+    IMdiAbacus: typeof import('~icons/mdi/abacus')['default']
+    IMdiCalendarCheck: typeof import('~icons/mdi/calendar-check')['default']
+    IMdiCurrencyUsd: typeof import('~icons/mdi/currency-usd')['default']
+    IMdiDotsGrid: typeof import('~icons/mdi/dots-grid')['default']
+    IMdiMenu: typeof import('~icons/mdi/menu')['default']
+    IMdiThemeLightDark: typeof import('~icons/mdi/theme-light-dark')['default']
+    Moon: typeof import('./src/components/icons/moon.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Sun: typeof import('./src/components/icons/sun.vue')['default']
     TheWelcome: typeof import('./src/components/TheWelcome.vue')['default']
+    ThreeLine: typeof import('./src/components/icons/three-line.vue')['default']
     WelcomeItem: typeof import('./src/components/WelcomeItem.vue')['default']
   }
 }
