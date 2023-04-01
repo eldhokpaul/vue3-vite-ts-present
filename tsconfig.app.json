@@ -4,6 +4,8 @@
   "exclude": ["src/**/__tests__/*"],
   "compilerOptions": {
     "composite": true,
+    "strict": true,
+    "lib": ["es2017"],
     "baseUrl": ".",
     "types": ["unplugin-icons/types/vue"],
     "paths": {

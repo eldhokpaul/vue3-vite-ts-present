@@ -9,6 +9,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    Card: typeof import('./src/components/base/card.vue')['default']
     DefaultHeader: typeof import('./src/components/default-layout/default-header.vue')['default']
     DefaultHome: typeof import('./src/components/default-layout/default-home.vue')['default']
     DefaultHomeBanner: typeof import('./src/components/default-layout/default-home-banner.vue')['default']
@@ -28,11 +29,17 @@ declare module '@vue/runtime-core' {
     IMdiMenu: typeof import('~icons/mdi/menu')['default']
     IMdiThemeLightDark: typeof import('~icons/mdi/theme-light-dark')['default']
     Moon: typeof import('./src/components/icons/moon.vue')['default']
+    PluginCard: typeof import('./src/components/plugin-card.vue')['default']
+    PluginCardSkeleton: typeof import('./src/components/plugin-card-skeleton.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Skeleton: typeof import('./src/components/base/skeleton.vue')['default']
     Sun: typeof import('./src/components/icons/sun.vue')['default']
     TheWelcome: typeof import('./src/components/TheWelcome.vue')['default']
     ThreeLine: typeof import('./src/components/icons/three-line.vue')['default']
+    Toggle: typeof import('./src/components/base/toggle.vue')['default']
+    ToggleActiveDeactive: typeof import('./src/components/base/toggle-active-deactive.vue')['default']
+    ToggleColor: typeof import('./src/components/base/toggle-color.vue')['default']
     WelcomeItem: typeof import('./src/components/WelcomeItem.vue')['default']
   }
 }

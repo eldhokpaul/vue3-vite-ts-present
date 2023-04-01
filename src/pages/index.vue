@@ -1,5 +1,5 @@
 <template>
-  <div class="font-light">
+  <div class="font-light dark:text-gray-200">
     Welcome to the
     <span class="font-bold text-lg">DataGuard</span>
     Dashboard

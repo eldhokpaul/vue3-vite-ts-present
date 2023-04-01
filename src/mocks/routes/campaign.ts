@@ -1,7 +1,6 @@
 // @ts-nocheck
-function mapToObject(arr, key = 'name') {
-  return arr.models.reduce((prev, curr) => ({ ...prev, [curr[key]]: curr }), {});
-}
+import mapToObject from '@utils/mapToObject';
+
 async function route() {
   this.namespace = 'campaign';
 

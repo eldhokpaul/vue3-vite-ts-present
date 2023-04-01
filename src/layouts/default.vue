@@ -10,7 +10,7 @@
 
     <DefaultSidebar v-model:show-sidebar="showSidebar" />
 
-    <div class="p-4 sm:ml-72">
+    <div class="sm:p-8 p-4 sm:ml-72">
       <RouterView />
     </div>
   </main>
