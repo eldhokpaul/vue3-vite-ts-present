@@ -45,6 +45,9 @@
 
 <script setup lang="ts">
 import { useGetDashboardData, useMutateToggleAllPlugin } from '@composables/api/useDashboardData';
+import MDIDotsGrid from '~icons/mdi/dots-grid';
+import MDICurrencyUsd from '~icons/mdi/currency-usd';
+import MDICalendarCheck from '~icons/mdi/calendar-check';
 
 defineProps<{ showSidebar: boolean }>();
 defineEmits<{(e: 'update:showSidebar', value: string): void }>();
@@ -54,9 +57,9 @@ const dashboardData = useGetDashboardData();
 const mutation = useMutateToggleAllPlugin();
 
 const mapIcon: Record<string, any> = {
-  'icon-marketing': defineAsyncComponent(() => import('~icons/mdi/dots-grid')),
-  'icon-finance': defineAsyncComponent(() => import('~icons/mdi/currency-usd')),
-  'icon-people': defineAsyncComponent(() => import('~icons/mdi/calendar-check')),
+  'icon-marketing': MDIDotsGrid,
+  'icon-finance': MDICurrencyUsd,
+  'icon-people': MDICalendarCheck,
 };
 
 const items = computed(() => Object.entries(dashboardData.data.value?.data.tabdata ?? {})
