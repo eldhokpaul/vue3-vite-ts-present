@@ -87,4 +87,16 @@ watch(enabled, (t) => {
     background: linear-gradient(0deg, rgb(255 204 204) 0%, rgb(241 241 241 / 0%) 70%);
   }
 }
+
+.dark {
+  .plugin {
+    &--enabled {
+      background: linear-gradient(0deg, rgb(58 78 68) 0%, rgb(241 241 241 / 0%) 70%);
+    }
+
+    &--disabled {
+      background: linear-gradient(0deg, rgb(68 54 54) 0%, rgb(241 241 241 / 0%) 70%);
+    }
+  }
+}
 </style>

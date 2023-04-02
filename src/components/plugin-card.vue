@@ -1,6 +1,6 @@
 <template>
   <Card>
-    <div :class="['flex gap-5 justify-between', disabled ? 'dark:opacity-20 opacity-40' : '']">
+    <div :class="['flex gap-5 justify-between', disabled ? 'dark:opacity-30 gcm -40' : '']">
       <div class="font-light">
         <div class="mb-4 text-lg dark:text-gray-100">{{ title }}</div>
         <div class="text-sm text-gray-500 dark:text-gray-400">
