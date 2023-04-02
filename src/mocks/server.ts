@@ -14,13 +14,11 @@ function createMockServer() {
       routes.call(this);
     },
     seeds(server) {
-      Object.keys(db.data.tabdata).forEach((tab) => {
-        // @ts-ignore
-        server.create('tab', { name: tab, ...db.data.tabdata[tab] });
+      Object.entries(db.data.tabdata).forEach(([key, value]) => {
+        server.create('tab', { name: key, ...value as any });
       });
-      Object.keys(db.data.plugins).forEach((plugin) => {
-        // @ts-ignore
-        server.create('plugin', { name: plugin, ...db.data.plugins[plugin] });
+      Object.entries(db.data.plugins).forEach(([key, value]) => {
+        server.create('plugin', { name: key, ...value as any });
       });
     },
   });

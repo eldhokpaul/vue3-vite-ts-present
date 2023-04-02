@@ -2,17 +2,16 @@
 import mapToObject from '@utils/mapToObject';
 
 async function route() {
-  this.namespace = 'campaign';
+  this.namespace = 'dashboard';
 
   this.get('/', (schema) => {
     const tabs = schema.tabs.all();
     const plugins = schema.plugins.all();
-    const returnData = {
+    return {
       tabs: tabs.models.map((tab) => tab.name),
       tabdata: mapToObject(tabs),
       plugins: mapToObject(plugins),
     };
-    return returnData;
   });
 }
 

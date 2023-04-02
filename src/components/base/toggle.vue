@@ -8,7 +8,14 @@
 <script setup lang="ts">
 import { useVModel } from '@vueuse/core';
 
-const props = withDefaults(defineProps<{ modelValue: boolean; variant?: 'red' | 'green' | 'blue' | 'teal'; disabled?: boolean; }>(), { variant: 'green' });
+const props = withDefaults(
+  defineProps<{
+    modelValue: boolean;
+    variant?: 'red' | 'green' | 'blue' | 'teal';
+    disabled?: boolean;
+  }>(),
+  { variant: 'green' },
+);
 const emit = defineEmits<{(e: 'update:modelValue', value: boolean): void }>();
 
 const localModelValue = useVModel(props, 'modelValue', emit);

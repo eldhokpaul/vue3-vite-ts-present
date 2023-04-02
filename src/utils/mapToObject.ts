@@ -1,6 +1,6 @@
-export default function mapToObject(arr: any, key = 'name') {
+export default function mapToObject(arr: {models: Object[]}, key = 'name') {
   return arr.models.reduce(
-    (prev: any, curr: Record<string, any>) => ({ ...prev, [curr[key]]: curr }),
+    (prev, curr: Record<string, any>) => ({ ...prev, [curr[key]]: curr }),
     {},
   );
 }

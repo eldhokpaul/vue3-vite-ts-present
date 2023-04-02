@@ -11,6 +11,7 @@
     "paths": {
       "@/*": ["./src/*"],
       "@utils/*": ["./src/utils/*"],
+      "@ts-types/*": ["./src/types/*"],
       "@composables/*": ["./src/composables/*"]
     }
   }

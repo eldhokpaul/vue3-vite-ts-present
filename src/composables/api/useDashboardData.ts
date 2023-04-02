@@ -1,17 +1,18 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/vue-query';
 import axios from '@utils/axios';
+import type { AxiosResponse } from 'axios';
+import type { Dashboard, Tab, Plugin } from '@ts-types/api';
 
 export function useGetDashboardData() {
-  return useQuery({
+  return useQuery<AxiosResponse<Dashboard>>({
     queryKey: ['dashboard-data'],
-    queryFn: () => axios.get('/campaign'),
+    queryFn: () => axios.get('/dashboard'),
   });
 }
 
 export function useMutatePlugin() {
   const queryClient = useQueryClient();
-  return useMutation({
-    // @ts-ignore
+  return useMutation<AxiosResponse<{ tab: Tab }>>({
     mutationFn: (data) => axios.put('/plugin', data),
     onSuccess: (newData) => queryClient.setQueryData(['dashboard-data'], (prevData: any) => ({
       ...prevData,
@@ -28,8 +29,7 @@ export function useMutatePlugin() {
 
 export function useMutateToggleAllPlugin() {
   const queryClient = useQueryClient();
-  return useMutation({
-    // @ts-ignore
+  return useMutation<AxiosResponse<{ plugins: Plugin }>>({
     mutationFn: (data) => axios.put('/plugin/toggle-all', data),
     onSuccess: (newData) => queryClient.setQueryData(['dashboard-data'], (prevData: any) => ({
       ...prevData,

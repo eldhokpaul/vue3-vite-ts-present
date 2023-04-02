@@ -5,6 +5,7 @@ async function route() {
   this.namespace = 'plugin';
 
   this.get('/', (schema) => schema.plugins.all());
+
   this.put('/', (schema, request) => {
     const attrs = JSON.parse(request.requestBody);
     const tab = schema.tabs.findBy({ name: attrs.tab });

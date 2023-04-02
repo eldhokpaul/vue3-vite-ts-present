@@ -1,15 +1,13 @@
 <template>
   <div>
-    <div v-if="dashboardData.isLoading && !currentTab ">
+    <div v-if="dashboardData.isLoading || !currentTab">
       <Skeleton class="md:mb-6 mb-4" width="200px" height="28px" />
       <div class="grid md:grid-cols-3 md:gap-7 gap-4">
         <PluginCardSkeleton v-for="i in 6" :key="i" />
       </div>
     </div>
     <template v-else>
-      <h1 class="text-lg md:mb-6 mb-4 dark:text-gray-100">
-        {{ currentTab?.title }} Plugins
-      </h1>
+      <h1 class="text-lg md:mb-6 mb-4 dark:text-gray-100">{{ currentTab?.title }} Plugins</h1>
       <div class="grid md:grid-cols-3 md:gap-7 gap-4">
         <PluginCard
           v-for="plugin in resultPlugins"
@@ -28,8 +26,9 @@
 
 <script lang="ts" setup>
 import { useGetDashboardData } from '@composables/api/useDashboardData';
+import type { Plugin } from '@ts-types/api';
 
-defineProps<{product: string}>();
+defineProps<{ product: string }>();
 
 const dashboardData = useGetDashboardData();
 const route = useRoute();
@@ -39,36 +38,29 @@ const tabdata = computed(() => dashboardData.data.value?.data.tabdata);
 const currentTab = computed(() => tabdata.value?.[route.params.product as string]);
 
 const resultPlugins = computed(() => {
-  const result: {
-    active: boolean;
-    disabled: boolean;
-    id: string;
-    title: string;
-    name: string;
-    description: string;
-  }[] = [];
+  const result: (Plugin & { active?: boolean; disabled?: boolean })[] = [];
   if (currentTab.value) {
     currentTab.value.active.forEach((disabledPlugin: string) => {
       result.push({
-        ...plugins.value[disabledPlugin],
+        ...plugins.value![disabledPlugin],
         active: true,
       });
     });
     currentTab.value.disabled.forEach((disabledPlugin: string) => {
       result.push({
-        ...plugins.value[disabledPlugin],
+        ...plugins.value![disabledPlugin],
         disabled: true,
       });
     });
     currentTab.value.inactive.forEach((disabledPlugin: string) => {
       result.push({
-        ...plugins.value[disabledPlugin],
+        ...plugins.value![disabledPlugin],
         active: false,
       });
     });
   }
 
+  // to keep the order of plugins
   return result.sort((a, b) => +a.id - +b.id);
 });
-
 </script>
