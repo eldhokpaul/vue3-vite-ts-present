@@ -50,3 +50,34 @@ npm run test:unit
 ```sh
 npm run lint
 ```
+
+## Project Structure
+I used auto import for components, icons, layout and also file system routing for the project.
+
+### components
+In this folder, we have the `components` related to our page
+
+### composables
+In this folder, we have the `composables` that we use in the project. For adding `API` composables with `vue-query`, put them in the `composables/api` folder.
+
+### layouts
+In this folder, we have the `layout` components. For adding a new `layout` you should add a component in this folder.
+
+### mocks
+In this folder, we added the mock server. For creating a mock server, we used `miragejs`
+
+### pages
+In this folder, we have the `pages`
+
+### types
+We have our `types` and `interfaces` declaration in this folder, and it's imported into other components
+### utils
+In this folder, we have the `utility` functions and also the `axios` instance
+
+
+## Deploy on Netlify
+This project is deployed on `https://vermillion-hummingbird-1b050a.netlify.app/` with `netlify` deployment
+
+If you have any further questions or feedback, don't hesitate to contact me
+
+mohammad.hooshdar@gmail.com
