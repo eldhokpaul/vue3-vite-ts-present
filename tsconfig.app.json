@@ -12,6 +12,7 @@
       "@/*": ["./src/*"],
       "@utils/*": ["./src/utils/*"],
       "@ts-types/*": ["./src/types/*"],
+      "@components/*": ["./src/components/*"],
       "@composables/*": ["./src/composables/*"]
     }
   }

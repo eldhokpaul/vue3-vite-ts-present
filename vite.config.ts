@@ -43,6 +43,7 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
       '@utils': fileURLToPath(new URL('./src/utils', import.meta.url)),
       '@ts-types': fileURLToPath(new URL('./src/types', import.meta.url)),
+      '@components': fileURLToPath(new URL('./src/components', import.meta.url)),
       '@composables': fileURLToPath(new URL('./src/composables', import.meta.url))
     }
   }
