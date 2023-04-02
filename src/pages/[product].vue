@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="dashboardData.isLoading || !currentTab">
+    <div v-if="dashboardData.isLoading && !currentTab">
       <Skeleton class="md:mb-6 mb-4" width="200px" height="28px" />
       <div class="grid md:grid-cols-3 md:gap-7 gap-4">
         <PluginCardSkeleton v-for="i in 6" :key="i" />
@@ -17,7 +17,7 @@
           :description="plugin.description"
           :disabled="plugin.disabled"
           :active="plugin.active"
-          :tab-name="currentTab.name"
+          :tab-name="currentTab!.name"
         />
       </div>
     </template>
