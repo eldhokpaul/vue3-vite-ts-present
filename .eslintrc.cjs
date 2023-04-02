@@ -38,5 +38,6 @@ module.exports = {
     'vue/component-name-in-template-casing': 'error',
     'vue/custom-event-name-casing': ['error', 'kebab-case'],
     'vuejs-accessibility/click-events-have-key-events': 'off',
+    'vue/max-len': 'off',
   },
 };
