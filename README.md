@@ -73,11 +73,3 @@ In this folder, we have the `pages`
 We have our `types` and `interfaces` declaration in this folder, and it's imported into other components
 ### utils
 In this folder, we have the `utility` functions and also the `axios` instance
-
-
-## Deploy on Netlify
-This project is deployed on `https://vermillion-hummingbird-1b050a.netlify.app/` with `netlify` deployment
-
-If you have any further questions or feedback, don't hesitate to contact me
-
-mohammad.hooshdar@gmail.com
